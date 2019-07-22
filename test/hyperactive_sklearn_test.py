@@ -4,14 +4,17 @@
 
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-
 from hyperactive import SimulatedAnnealingOptimizer
+from hyperactive import ParticleSwarmOptimizer
+import time
 
 iris_data = load_iris()
 X = iris_data.data
 y = iris_data.target
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+
+t1 = time.time()
 
 # this defines the model and hyperparameter search space
 search_config = {
@@ -24,13 +27,19 @@ search_config = {
     }
 }
 
-Optimizer = SimulatedAnnealingOptimizer(search_config, n_iter=100, n_jobs=4)
+#Optimizer = SimulatedAnnealingOptimizer(search_config, n_iter=100, n_jobs=4)
+Optimizer = ParticleSwarmOptimizer(search_config, n_iter=20, n_jobs=-1)
 
 # search best hyperparameter for given data
 Optimizer.fit(X_train, y_train)
+
+t2 = time.time()
 
 # predict from test data
 prediction = Optimizer.predict(X_test)
 
 # calculate accuracy score
 score = Optimizer.score(X_test, y_test)
+
+print("")
+print("time: {}".format(t2-t1))
