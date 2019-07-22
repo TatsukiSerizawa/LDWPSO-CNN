@@ -2,12 +2,12 @@
 
 # Example with a convolutional neural network in keras
 
+import time
 import numpy as np
-
 from keras.datasets import mnist
 from keras.utils import to_categorical
 
-from hyperactive import RandomSearchOptimizer
+from hyperactive import RandomSearchOptimizer, ParticleSwarmOptimizer
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -42,12 +42,17 @@ search_config = {
 }
 
 Optimizer = RandomSearchOptimizer(search_config, n_iter=20)
+#Optimizer = ParticleSwarmOptimizer(search_config, n_iter=20)
 
+t1 = time.time()
 # search best hyperparameter for given data
 Optimizer.fit(X_train, y_train)
 
+t2 = time.time()
 # predict from test data
 prediction = Optimizer.predict(X_test)
 
 # calculate accuracy score
 score = Optimizer.score(X_test, y_test)
+
+print("time: {}".format(t2-t1))
