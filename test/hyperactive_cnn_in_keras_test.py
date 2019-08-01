@@ -37,10 +37,10 @@ search_config = {
     },
     "keras.layers.MaxPooling2D.4": {"pool_size": [(2, 2)]},
     "keras.layers.Flatten.5": {},
-    "keras.layers.Dense.6": {"units": 30, "activation": ["softmax"]},
+    "keras.layers.Dense.6": {"units": [30], "activation": ["softmax"]},
     #"keras.layers.Dense.6": {"units": range(30, 200, 10), "activation": ["softmax"]},
-    "keras.layers.Dropout.7": {"rate": 0.4},
-    #"keras.layers.Dropout.7": {"rate": list(np.arange(0.4, 0.8, 0.1))},
+    #"keras.layers.Dropout.7": {"rate": 0.4},
+    "keras.layers.Dropout.7": {"rate": list(np.arange(0.4, 0.8, 0.2))},
     "keras.layers.Dense.8": {"units": [10], "activation": ["softmax"]},
 }
 
