@@ -12,9 +12,7 @@ iris_data = load_iris()
 X = iris_data.data
 y = iris_data.target
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
-
-t1 = time.time()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 # this defines the model and hyperparameter search space
 search_config = {
@@ -27,13 +25,38 @@ search_config = {
     }
 }
 
+# start point
+start_point = {
+    "sklearn.ensemble.RandomForestClassifier.0": {
+        "n_estimators": [30],
+        "max_depth": [6],
+        "criterion": ["entropy"],
+        "min_samples_split": [12],
+        "min_samples_leaf": [16],
+    }
+}
+
 #Optimizer = SimulatedAnnealingOptimizer(search_config, n_iter=100, n_jobs=4)
-Optimizer = ParticleSwarmOptimizer(search_config, n_iter=20, n_jobs=-1)
+Optimizer = ParticleSwarmOptimizer(search_config, 
+                                    n_iter=10,  # number of iterations to perform
+                                    metric="accuracy", 
+                                    n_jobs=1, 
+                                    cv=3, 
+                                    verbosity=1, 
+                                    random_state=None, 
+                                    warm_start=start_point,  # Hyperparameter configuration to start from
+                                    memory=True,  # Stores explored evaluations in a dictionary to save computing time
+                                    scatter_init=False,  # Chooses better initial position by training on multiple random positions with smaller training dataset 
+                                    n_part=10,  # number of particles
+                                    w=0.5,  # interia factor
+                                    c_k=0.5,  # cognitive factor
+                                    c_s=0.9)  # social factor
 
 # search best hyperparameter for given data
+t1 = time.time()
 Optimizer.fit(X_train, y_train)
-
 t2 = time.time()
+print("time: {}".format(t2-t1))
 
 # predict from test data
 prediction = Optimizer.predict(X_test)
@@ -41,5 +64,4 @@ prediction = Optimizer.predict(X_test)
 # calculate accuracy score
 score = Optimizer.score(X_test, y_test)
 
-print("")
-print("time: {}".format(t2-t1))
+print(score)
