@@ -64,4 +64,4 @@ prediction = Optimizer.predict(X_test)
 # calculate accuracy score
 score = Optimizer.score(X_test, y_test)
 
-print(score)
+print("test accracy: {}".format(score))

@@ -18,26 +18,26 @@ y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
 
-# this defines the structure of the model and the search space in each layer
+# this defines the structure of the model and print("time: {}".format(t2-t1))the search space in each layer
 search_config = {
     "keras.compile.0": {"loss": ["categorical_crossentropy"], "optimizer": ["SGD"]},
     "keras.fit.0": {"epochs": [5], "batch_size": [500], "verbose": [2]},
     "keras.layers.Conv2D.1": {
         "filters": [32, 64],
         #"kernel_size": range(3, 4),
-        "kernel_size": [3],
+        "kernel_size": [(3, 3)],
         "activation": ["relu"],
         "input_shape": [(28, 28, 1)],
     },
     "keras.layers.MaxPooling2D.2": {"pool_size": [(2, 2)]},
     "keras.layers.Conv2D.3": {
         "filters": [16, 32],
-        "kernel_size": [3],
+        "kernel_size": [(3, 3)],
         "activation": ["relu"],
     },
     "keras.layers.MaxPooling2D.4": {"pool_size": [(2, 2)]},
     "keras.layers.Flatten.5": {},
-    "keras.layers.Dense.6": {"units": [30], "activation": ["softmax"]},
+    "keras.layers.Dense.6": {"units": [30], "activation": ["relu"]},
     #"keras.layers.Dense.6": {"units": range(30, 200, 10), "activation": ["softmax"]},
     #"keras.layers.Dropout.7": {"rate": 0.4},
     "keras.layers.Dropout.7": {"rate": list(np.arange(0.4, 0.8, 0.2))},
@@ -52,10 +52,12 @@ t1 = time.time()
 Optimizer.fit(X_train, y_train)
 
 t2 = time.time()
+print("time: {}".format(t2-t1))
+
 # predict from test data
 prediction = Optimizer.predict(X_test)
 
 # calculate accuracy score
 score = Optimizer.score(X_test, y_test)
 
-print("time: {}".format(t2-t1))
+print("test accracy: {}".format(score))
