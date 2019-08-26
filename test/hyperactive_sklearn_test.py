@@ -65,3 +65,5 @@ prediction = Optimizer.predict(X_test)
 score = Optimizer.score(X_test, y_test)
 
 print("test accracy: {}".format(score))
+
+# Optimizer.export('hoge.txt')
