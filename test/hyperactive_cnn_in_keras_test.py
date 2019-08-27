@@ -44,7 +44,7 @@ search_config = {
     "keras.layers.Dense.8": {"units": [10], "activation": ["softmax"]},
 }
 
-Optimizer = RandomSearchOptimizer(search_config, n_iter=5, verbosity=1)  # verbosity=1で最適パラメータ表示
+Optimizer = RandomSearchOptimizer(search_config, n_iter=1)  # verbosity=1で最適パラメータ表示
 #Optimizer = ParticleSwarmOptimizer(search_config, n_iter=20)
 
 t1 = time.time()
