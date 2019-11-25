@@ -1,6 +1,10 @@
 <p align="center">
   <br>
+<<<<<<< HEAD
   <a href="https://github.com/SimonBlanke/Hyperactive"><img src="./images/hyperactive_logo_alt.png" height="200"></a>
+=======
+  <a href="https://github.com/SimonBlanke/Hyperactive"><img src="./images/hyperactive_logo_alt.png" height="210"></a>
+>>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
   <br>
 </p>
 
@@ -26,7 +30,10 @@
   <h4>
     <a href="https://github.com/SimonBlanke/Hyperactive#overview">Overview</a> |
     <a href="https://github.com/SimonBlanke/Hyperactive#installation">Installation</a> |
+<<<<<<< HEAD
     <a href="https://github.com/SimonBlanke/Hyperactive#how-to-use-hyperactive">How to</a> |
+=======
+>>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
     <a href="https://github.com/SimonBlanke/Hyperactive#examples">Examples</a> |
     <a href="https://github.com/SimonBlanke/Hyperactive#hyperactive-api">Hyperactive API</a> |
     <a href="https://github.com/SimonBlanke/Hyperactive#license">License</a>
@@ -137,6 +144,7 @@
 
 Hyperactive is developed and tested in python 3:
 
+<<<<<<< HEAD
 [![pyversions](https://img.shields.io/pypi/pyversions/hyperactive.svg?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/hyperactive)
 [![commit-activity](https://img.shields.io/github/commit-activity/w/SimonBlanke/Hyperactive?style=flat-square)](https://github.com/SimonBlanke/Hyperactive/graphs/contributors)
 [![last-commit](https://img.shields.io/github/last-commit/SimonBlanke/Hyperactive?style=flat-square)](https://github.com/SimonBlanke/Hyperactive/commits/master)
@@ -144,6 +152,15 @@ Hyperactive is developed and tested in python 3:
 <br>
 
 Hyperactive (stable) is available on PyPi:
+=======
+[![pyversions](https://img.shields.io/pypi/pyversions/hyperactive.svg?style=for-the-badge&logo=python&logoColor=white)](https://pypi.org/project/hyperactive)
+[![commit-activity](https://img.shields.io/github/commit-activity/w/SimonBlanke/Hyperactive?style=for-the-badge)](https://github.com/SimonBlanke/Hyperactive/graphs/contributors)
+[![last-commit](https://img.shields.io/github/last-commit/SimonBlanke/Hyperactive?style=for-the-badge)](https://github.com/SimonBlanke/Hyperactive/commits/master)
+
+<br>
+
+Hyperactive is available on PyPi:
+>>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
 
 [![PyPI version](https://badge.fury.io/py/hyperactive.svg)](https://badge.fury.io/py/hyperactive)
 [![Downloads](https://pepy.tech/badge/hyperactive)](https://pepy.tech/project/hyperactive)
@@ -154,6 +171,7 @@ pip install hyperactive
 
 <br>
 
+<<<<<<< HEAD
 Hyperactive (development version) from Github:
 
 ```console
@@ -248,6 +266,8 @@ The [advanced features](https://github.com/SimonBlanke/Hyperactive/tree/master/h
 
 <br>
 
+=======
+>>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
 ## Examples
 
 <details><summary>Scikit-learn:</summary>
@@ -640,11 +660,14 @@ export(self, filename)
 
 <br>
 
+<<<<<<< HEAD
 ## References
 
 #### [Proxy Datasets for Training Convolutional Neural Networks](https://arxiv.org/pdf/1906.04887v1.pdf)
 
 
+=======
+>>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
 ## License
 
 [![LICENSE](https://img.shields.io/github/license/SimonBlanke/Hyperactive?style=for-the-badge)](https://github.com/SimonBlanke/Hyperactive/blob/master/LICENSE)

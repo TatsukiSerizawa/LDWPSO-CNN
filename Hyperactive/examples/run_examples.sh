@@ -1,4 +1,5 @@
 python example_basic.py
+<<<<<<< HEAD
 
 python ./machine_learning/sklearn_.py
 python ./machine_learning/xgboost_.py
@@ -17,3 +18,12 @@ python ./advanced_features/scatter_init.py
 python ./advanced_features/transfer_learning.py
 python ./advanced_features/warm_start_keras.py
 python ./advanced_features/warm_start_sklearn.py
+=======
+python example_xgboost.py
+python example_multiprocessing.py
+python example_warm_start_sklearn.py
+python example_mlp.py
+python example_cnn.py
+python example_warm_start_keras.py
+python example_transfer_learning.py
+>>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
