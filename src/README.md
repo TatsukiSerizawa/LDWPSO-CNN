@@ -1,4 +1,4 @@
-# Research of Hyperparameter Optimization (JAIHC)
+# LDWPSO CNN
 
 メタヒューリスティックアルゴリズム (LDWPSO) を用いてCNNのHyperparameter最適化を行います．  
 
