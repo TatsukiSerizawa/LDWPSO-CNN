@@ -1,11 +1,9 @@
 # Research of Hyperparameter Optimization (JAIHC)
 
-メタヒューリスティックアルゴリズムを用いてCNNのHyperparameter最適化を行います．  
+メタヒューリスティックアルゴリズム (LDWPSO) を用いてCNNのHyperparameter最適化を行います．  
 
-1. このディレクトリにHyperactiveをcloneして置きます．
-2. Hyperactive内のPSOのプログラムをこのディレクトリにある``particle_swarm_optimization.py``と入れ替えます．
-3. ``pso_mnist.py``または``cifer10.py``を実行することで，それぞれのデータセットに対してLDWPSOによるCNN最適化を行います．
-4. ``pso_mnist_result.py``または``cifar10_result.py``で最適化されたパラメータを入力して実行することで，検証を行います．
+1. ``pso_mnist.py``または``cifer10.py``を実行することで，それぞれのデータセットに対してLDWPSOによるCNN最適化を行います．
+2. ``pso_mnist_result.py``または``cifar10_result.py``で最適化されたパラメータを入力して実行することで，検証を行います．
 
 ## Use data
 
