@@ -1,9 +1,9 @@
 # LDWPSO CNN
 
 Python implementation of LDWPSO CNN (Linearly Decreasing Particle Swarm Optimization Convolutional Neural Network).  
-The Hyperactive library is used in the program.
+The program rewrites and uses part of the Hyperactive library.
 
-Article: 
+Article: [Optimization of Convolutional Neural Network Using the Linearly Decreasing Weight Particle Swarm Optimization]()
 
 # Usage
 
