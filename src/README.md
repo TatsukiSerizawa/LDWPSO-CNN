@@ -1,7 +1,5 @@
 # LDWPSO CNN
 
-## file
-
 - lent5.py: Baseline CNN
 - pso_mnist.py: Classify MNIST by LDWPSO CNN
 - pso_mnist_result.py: For verification of MNIST classification
