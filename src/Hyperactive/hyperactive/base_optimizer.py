@@ -2,6 +2,7 @@
 # Email: simon.blanke@yahoo.com
 # License: MIT License
 
+import time
 
 import pickle
 import multiprocessing
@@ -96,9 +97,29 @@ class BaseOptimizer:
         self._config_, _cand_ = initialize_search(self._config_, nth_process, X, y)
         _p_ = self._init_opt_positioner(_cand_, X, y)
 
+        t1 = time.time()
+
         for i in range(self._config_.n_iter):
+            print("iter:", i+1)
+
             _cand_ = self._iterate(i, _cand_, _p_, X, y)
             self._config_.update_p_bar(1)
+
+            t2 = time.time()
+            print("score:", _cand_.score_best)
+            print("time:", t2-t1)
+            '''
+            early_stop_score = _cand_.score_best
+            if early_stop_score > 96.0:
+                print("early stop!")
+                _cand_ = finish_search_(self._config_, _cand_, X, y)
+                return _cand_
+            print(type(early_stop_score))
+            
+            if i+1 == 4:
+                _cand_ = finish_search_(self._config_, _cand_, X, y)
+                return _cand_
+            '''
 
         _cand_ = finish_search_(self._config_, _cand_, X, y)
 

@@ -25,7 +25,6 @@ class ParticleSwarmOptimizer(BaseOptimizer):
         return _p_list_
 
     def _move_particles(self, _cand_, _p_list_, iter_count):
-<<<<<<< HEAD
         # linear decay
         w_max, w_min = 0.9, 0.4
         D = (10 - iter_count) / 10  # 最大反復数は手動
@@ -37,16 +36,6 @@ class ParticleSwarmOptimizer(BaseOptimizer):
         for _p_ in _p_list_:
             r1, r2 = random.random(), random.random()
 
-=======
-        w_max, w_min = 0.9, 0.4
-        D = (5 - iter_count) / 5  # 最大反復数は手動
-        E = w_max - w_min
-        w = D * E + w_min
-        for _p_ in _p_list_:
-            r1, r2 = random.random(), random.random()
-
-            print(w)
->>>>>>> dbd0b511032907d8ce3be0ca13570fb6c3f0fa6e
             A = w * _p_.velo
             B = self._arg_.c_k * r1 * np.subtract(_p_.pos_best, _p_.pos_current)
             C = self._arg_.c_s * r2 * np.subtract(_cand_.pos_best, _p_.pos_current)
