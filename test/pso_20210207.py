@@ -1,3 +1,4 @@
+import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import (
     Dense,
@@ -27,7 +28,7 @@ y_train = y_train[0:1000]
 X_test = X_test[0:1000]
 y_test = y_test[0:1000]
 
-
+# make model
 def cnn(opt):
     nn = Sequential()
     nn.add(
