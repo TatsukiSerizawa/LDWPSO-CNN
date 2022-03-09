@@ -1,18 +1,20 @@
 import time
 import numpy as np
 from keras.datasets import mnist, cifar10
-from keras.utils import to_categorical
-from keras.models import Sequential
-from keras.layers import Conv2D, Dense, MaxPool2D, Dropout, Flatten
-from keras import optimizers
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, Dense, MaxPool2D, Dropout, Flatten
+from tensorflow.keras import optimizers
 
-#(X_train, y_train), (X_test, y_test) = mnist.load_data()
-(X_train, y_train), (X_test, y_test) = cifar10.load_data()
+# MNIST
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = X_train.reshape(60000, 28, 28, 1)
+X_test = X_test.reshape(10000, 28, 28, 1)
 
-#X_train = X_train.reshape(60000, 28, 28, 1)
-#X_test = X_test.reshape(10000, 28, 28, 1)
-X_train = X_train.astype('float32')/255.0
-X_test = X_test.astype('float32')/255.0
+# cifar-10
+#(X_train, y_train), (X_test, y_test) = cifar10.load_data()
+#X_train = X_train.astype('float32')/255.0
+#X_test = X_test.astype('float32')/255.0
 
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
@@ -21,8 +23,11 @@ learning_time = []
 test_score = []
 
 model = Sequential()
-#model.add(Conv2D(filters=6, kernel_size=(5,5), padding='same', activation='sigmoid', input_shape=(28, 28, 1)))
-model.add(Conv2D(filters=6, kernel_size=(5,5), padding='same', activation='sigmoid', input_shape=(32, 32, 3)))
+#MNIST
+model.add(Conv2D(filters=6, kernel_size=(5,5), padding='same', activation='sigmoid', input_shape=(28, 28, 1)))
+#cifar-10
+#model.add(Conv2D(filters=6, kernel_size=(5,5), padding='same', activation='sigmoid', input_shape=(32, 32, 3)))
+
 model.add(MaxPool2D(strides=2))
 model.add(Conv2D(filters=16, kernel_size=(5,5), padding='valid', activation='sigmoid'))
 model.add(MaxPool2D(strides=2))

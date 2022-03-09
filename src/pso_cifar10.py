@@ -5,8 +5,8 @@
 import time
 import numpy as np
 from keras.datasets import cifar10
-from keras.utils import to_categorical
-from keras import optimizers
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras import optimizers
 
 from Hyperactive.hyperactive import RandomSearchOptimizer, ParticleSwarmOptimizer
 #import hyperactive

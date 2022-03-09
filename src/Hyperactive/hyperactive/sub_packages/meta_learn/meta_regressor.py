@@ -7,7 +7,7 @@ import glob
 import pandas as pd
 
 from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.externals import joblib
+import joblib
 from sklearn.preprocessing import MinMaxScaler
 
 

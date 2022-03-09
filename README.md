@@ -7,19 +7,33 @@ Article: [Optimization of Convolutional Neural Network Using the Linearly Decrea
 
 # Usage
 
+## Requirement
+
+* Python 3.8
+* scikit leran 1.0
+* keras 2.8
+
 ## LDWPSO CNN
 
-If you use MNIST dataset, you can use the following command.
+1. Clone this repository
 
-```
-python src/pso_mnist.py
-```
+2. The baseline LeNet-5 can be run with the following command
 
-If you use CIFAR-10 dataset, you can use the following command.
+    ```
+    python src/lenet5.py
+    ```
 
-```
-python src/pso_cifar10.py
-```
+3. If you use MNIST dataset, you can use the following command.
+
+    ```
+    python src/pso_mnist.py
+    ```
+
+4. If you use CIFAR-10 dataset, you can use the following command.
+
+    ```
+    python src/pso_cifar10.py
+    ```
 
 ## Validation
 

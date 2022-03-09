@@ -5,8 +5,8 @@
 import time
 import numpy as np
 from keras.datasets import mnist
-from keras.utils import to_categorical
-from keras import optimizers
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras import optimizers
 
 from Hyperactive.hyperactive import RandomSearchOptimizer, ParticleSwarmOptimizer
 #import hyperactive
@@ -43,7 +43,6 @@ search_config = {
     "keras.layers.Flatten.5": {},
     "keras.layers.Dense.6": {"units": range(4, 201), "activation": ["sigmoid", "relu", "tanh"]},
     "keras.layers.Dense.7": {"units": range(4, 201), "activation": ["sigmoid", "relu", "tanh"]},
-    #"keras.layers.Dropout.7": {"rate": list(np.arange(0.2, 0.8, 0.2))},
     "keras.layers.Dense.8": {"units": [10], "activation": ["softmax"]},
 }
 

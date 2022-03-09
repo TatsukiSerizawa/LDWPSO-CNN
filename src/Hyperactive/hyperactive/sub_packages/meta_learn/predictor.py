@@ -3,7 +3,7 @@
 # License: MIT License
 
 from pathlib import Path
-from sklearn.externals import joblib
+import joblib
 
 from .label_encoder import label_encoder_dict
 from .data_wrangler import find_best_hyperpara
